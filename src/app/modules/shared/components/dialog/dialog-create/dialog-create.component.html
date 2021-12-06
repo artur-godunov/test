@@ -1,0 +1,27 @@
+<h2>Create new {{data.title}}</h2>
+
+<form
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="submit(form)"
+>
+  <ng-container *ngFor="let field of data.fields">
+    <app-input-file
+      *ngIf="field.type === LIST_ITEM_ELEMENT_TYPE.AVATAR"
+      [label]="field.label"
+      [formControlName]="field.formControlName"
+    ></app-input-file>
+
+    <app-input
+      *ngIf="field.type === LIST_ITEM_ELEMENT_TYPE.TEXT"
+      [label]="field.label"
+      [formControlName]="field.formControlName"
+    ></app-input>
+  </ng-container>
+
+  <div class="dialog-create-button-wrapper">
+    <app-button type="submit" [disabled]="!form.valid">Create</app-button>
+
+    <app-button (click)="cancel()">Cancel</app-button>
+  </div>
+</form>

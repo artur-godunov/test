@@ -1,0 +1,20 @@
+@import "../../../../styles/base/vars";
+
+.users-learnings-dialog-list {
+  margin-bottom: 20px;
+}
+
+.users-learnings-dialog-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+
+  &:nth-child(2n) {
+    background: $grey-1;
+  }
+
+  &:nth-child(2n+1) {
+    background: transparentize($grey-1, 0.5);
+  }
+}

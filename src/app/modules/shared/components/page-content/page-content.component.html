@@ -1,0 +1,18 @@
+<h1>{{pageTitle}}</h1>
+
+<app-button
+  class="page-content-create"
+  (click)="createItem()"
+>
+  Create new {{createTitle}}
+</app-button>
+
+<app-search label="Search by Name"></app-search>
+
+<app-list>
+  <app-list-item *ngFor="let dataSourceItem of dataSource; trackBy: trackByFn">
+    <app-list-item-content [elements]="elements" [dataSource]="dataSourceItem"></app-list-item-content>
+  </app-list-item>
+</app-list>
+
+<app-pagination [length]="pageLength" [pageSize]="pageSize"></app-pagination>

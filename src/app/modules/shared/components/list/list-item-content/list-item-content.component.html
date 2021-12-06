@@ -1,0 +1,27 @@
+<ng-container *ngFor="let value of elements">
+  <div
+    *ngIf="value.type === LIST_ITEM_ELEMENT_TYPE.AVATAR"
+    class="list-item-content-element list-item-content-element--avatar"
+    [style.backgroundImage]="'url(' + value.element(dataSource)  + ')'"
+  ></div>
+
+  <div
+    *ngIf="value.type === LIST_ITEM_ELEMENT_TYPE.TEXT"
+    class="list-item-content-element"
+  >
+    {{value.element(dataSource)}}
+  </div>
+
+  <app-button
+    *ngIf="value.type === LIST_ITEM_ELEMENT_TYPE.ACTION"
+    (click)="value.element(dataSource)"
+    [disabled]="value.isHide !== undefined && value.isHide(dataSource)"
+    class="list-item-content-element list-item-content-element--align-right"
+  >
+    {{
+      value.actionTitle !== undefined
+        ? value.actionTitle
+        : (value.actionTitleFn !== undefined && value.actionTitleFn(dataSource))
+    }}
+  </app-button>
+</ng-container>

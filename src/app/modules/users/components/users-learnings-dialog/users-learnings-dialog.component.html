@@ -1,0 +1,7 @@
+<h2>{{data.title}}</h2>
+
+<div class="users-learnings-dialog-list">
+  <div class="users-learnings-dialog-item" *ngFor="let learning of data.learnings">{{learning}}</div>
+</div>
+
+<app-button (click)="close()">Close</app-button>

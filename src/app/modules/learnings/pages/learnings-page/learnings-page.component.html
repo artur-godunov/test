@@ -1,0 +1,9 @@
+<app-page-content
+  pageTitle="Learnings"
+  createTitle="Learning"
+  [elements]="elements"
+  [dataSource]="learnings$ | async"
+  (create)="createLearning()"
+  (change)="changePageContent($event)"
+  [pageLength]="pageLength"
+></app-page-content>

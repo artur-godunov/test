@@ -1,0 +1,10 @@
+<app-button
+  *ngFor="let link of HEADER_LINKS"
+  class="header-item"
+  [routerLink]="link.path"
+  routerLinkActive
+  #rla="routerLinkActive"
+  [color]="rla.isActive ? 'primary' : undefined"
+>
+  {{link.title}}
+</app-button>

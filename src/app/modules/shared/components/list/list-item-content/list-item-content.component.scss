@@ -1,0 +1,27 @@
+@import "../../../../../styles/base/vars";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.list-item-content-element {
+  width: 20%;
+
+  &--avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $black-1;
+    background-color: $white-1;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+}

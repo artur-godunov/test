@@ -1,0 +1,13 @@
+<h2>{{data.title}}</h2>
+
+<app-select
+  [label]="data.title"
+  [items]="items"
+  [formControl]="formControl"
+></app-select>
+
+<div class="learnings-assign-dialog-buttons-wrapper">
+  <app-button (click)="assign()">Assign</app-button>
+
+  <app-button (click)="close()">Close</app-button>
+</div>

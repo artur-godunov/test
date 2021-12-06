@@ -1,0 +1,9 @@
+<app-page-content
+  pageTitle="Users"
+  createTitle="User"
+  [elements]="elements"
+  [dataSource]="users$ | async"
+  (create)="createUser()"
+  (change)="changePageContent($event)"
+  [pageLength]="pageLength"
+></app-page-content>
